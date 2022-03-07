@@ -9,7 +9,7 @@ class HomePage(BasePage):
 
     # header buttons
     registerBtn = (By.XPATH, '//*[@id="root"]/div[1]/div[1]/div/div[1]/nav/div[2]/a[4]')
-    signInBtn = (By.XPATH, '//*[@id="root"]/div[1]/div[1]/div/div[1]/nav/div[2]/a[3]')
+    loginBtn = (By.XPATH, '//*[@id="root"]/div[1]/div[1]/div/div[1]/nav/div[2]/a[3]')
     trackingBtn = (By.XPATH, '//*[@id="root"]/div[1]/div[1]/div/div[1]/nav/div[2]/a[2]')
     courierOrderBtn = (By.XPATH, '//*[@id="root"]/div[1]/div[1]/div/div[1]/nav/div[2]/a[1]')
     profileBtn = (By.XPATH, '//*[@id="root"]/div[1]/div[1]/div/div[1]/nav/div[2]/a[3]')
@@ -18,8 +18,8 @@ class HomePage(BasePage):
     def navigate_to_registerPage(self):
         self.do_click(self.registerBtn)
 
-    def navigate_to_signInPage(self):
-        self.do_click(self.signInBtn)
+    def navigate_to_loginPage(self):
+        self.do_click(self.loginBtn)
 
     def navigate_to_trackingPage(self):
         self.do_click(self.trackingBtn)

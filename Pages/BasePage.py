@@ -26,4 +26,14 @@ class BasePage:
         return element.text
 
     def clear_input(self, by_locator):
-        WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(by_locator)).clear_field()
+        WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(by_locator)).clear()
+
+    def alert_is_present(self):
+        alert = WebDriverWait(self.driver, 10).until(EC.alert_is_present())
+        print(alert.text)
+        alert.accept()
+
+    def scroll_to_element(self, by_locator):
+        element = self.driver.find_element(by_locator)
+        self.driver.execute_script("arguments[0].scrollIntoView();", element)
+
