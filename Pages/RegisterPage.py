@@ -38,7 +38,7 @@ class RegisterPage(BasePage):
         self.do_send_key(self.emailInput, email)
         self.do_send_key(self.passwordInput, password)
         self.do_send_key(self.passwordConfirmInput, password)
-        self.do_click(self.acceptPrivacyCheckbox)
+        self.do_click(self.acceptTermCheckbox)
         self.do_click(self.registerBtn)
 
     def term_dont_accept(self, name, email, password):

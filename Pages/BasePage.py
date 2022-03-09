@@ -25,6 +25,10 @@ class BasePage:
         element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(by_locator))
         return element.text
 
+    def get_element(self, by_locator):
+        element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(by_locator))
+        return element
+
     def clear_input(self, by_locator):
         WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(by_locator)).clear()
 
@@ -33,7 +37,6 @@ class BasePage:
         print(alert.text)
         alert.accept()
 
-    def scroll_to_element(self, by_locator):
-        element = self.driver.find_element(by_locator)
+    def scroll_to_element(self, element):
         self.driver.execute_script("arguments[0].scrollIntoView();", element)
 

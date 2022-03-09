@@ -4,6 +4,7 @@ from Tests.test_BaseTest import BaseTest
 from Pages.HomePage import HomePage
 from Pages.LoginPage import LoginPage
 from Pages.MyProfilePage import MyProfilePagePage
+from Config.Config import TestData
 from faker import Faker
 
 
@@ -28,7 +29,7 @@ class TestMyProfilePage(BaseTest):
         time.sleep(10)
 
         self.loginPage = LoginPage(self.driver)
-        self.loginPage.do_login("tesztelek@teszt.hu", "Teszt123")
+        self.loginPage.do_login(TestData.validUsername, TestData.password)
         self.homePage.do_click(self.homePage.profileBtn)
 
         self.myProfilePage = MyProfilePagePage(self.driver)
@@ -51,8 +52,3 @@ class TestMyProfilePage(BaseTest):
 
         self.myProfilePage.submit_data_change()
         self.homePage.alert_is_present()
-
-        self.homePage.scroll_to_element(self.homePage.logoutBtn)
-
-        self.myProfilePage.logout()
-
